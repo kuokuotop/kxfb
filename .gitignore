@@ -1,0 +1,9 @@
+src/*.pyc
+*.swp
+src/*.swp
+*.so
+src/*.class
+result/*.pickle
+result/*.png
+result/*.jpg
+snapvx-0.5

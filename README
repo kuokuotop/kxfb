@@ -1,0 +1,13 @@
+Files:
+
+Reviews of Canon G3 are is in "Canon G3.txt". This is from Bing Liu's 5 product dataset. The function "load_reviews" in "ReviewParser.py" can read information from this file.
+
+ReviewDependencyParser.java will be compiled by build_java.sh. Then you can run run_java.sh to parse sentences. All input and output files are specified in the file "ReviewDependencyParser.properties". input.4 = Canon G3_id.txt means that the program will read sentences from the Canon G3_id.txt file, and output the parsed sentences to output.4=Canon G3_parsed.txt.
+
+For the unlabeled sentences, you can put nothing inside the first two []'s in each line of "Canon G3_id.txt" (assuming that Canon G3 is not annotated). You will need to create such a file for each unlabeled product in Amazon review dataset. The id at the beginning of each line is a hash code of that sentence, and I used md5 to hash the string. This is will be used as primary keys to connect multiple files like a tables in a database.
+
+*_id.txt and *_parsed.txt files, and a sentiment dictionary (specified by lines 133 - 134 in Main.py) will be input to Main.py.
+
+Run the dp algorithm:
+
+You will need to uncomment lines 133 - 149 in Main.py to run double propagation. Lines after 102 within the function test_rules in Main.py are for evaluation when there are labeled aspects and sentiments. For unlabeled data, you can just use line 97 - 101 to obtain opinion and aspect sets.
